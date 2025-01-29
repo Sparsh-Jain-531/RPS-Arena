@@ -2,9 +2,10 @@ console.log("RPS Arena")
 
 const modes=["rock","paper","scissors"]
 const random=Math.floor(Math.random() * 3);
-const computerMode=modes[random];
+let computerMode;
 let playerMode;
 const result=()=>{
+    computerMode=modes[random];
     if(computerMode==="rock" && playerMode==="scissors"){
         alert(`You choose ${playerMode} and computer choose ${computerMode}. the winner is  Computer!`);
     } else if(computerMode==="rock" && playerMode==="paper"){
