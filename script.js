@@ -8,6 +8,13 @@ const score=JSON.parse(localStorage.getItem("score")) || {
   Ties:0,
 };
 
+let win=document.querySelector(".wins")
+win.innerHTML=`${score.Wins}`
+let losses=document.querySelector(".losses")
+losses.innerHTML=`${score.Losses}`
+let tie=document.querySelector(".tie")
+tie.innerHTML=`${score.Ties}`
+
 const result = () => {
 
   const modes = ["rock", "paper", "scissors"];
@@ -18,54 +25,30 @@ const result = () => {
 
   if (computerMode === "rock" && playerMode === "scissors") {
     score.Losses+=1;
-    alert(
-      `You choose ${playerMode} and computer choose ${computerMode}. the winner is  Computer!\nWins: ${score.Wins}, Losses: ${score.Losses}, Ties: ${score.Ties}`
-    );
   } else if (computerMode === "rock" && playerMode === "paper") {
     score.Wins+=1;
-    alert(
-      `You choose ${playerMode} and computer choose ${computerMode}. the winner is  You!\nWins: ${score.Wins}, Losses: ${score.Losses}, Ties: ${score.Ties}`
-    );
   } else if (computerMode === "rock" && playerMode === "rock") {
     score.Ties+=1;
-    alert(
-      `You choose ${playerMode} and computer choose ${computerMode}. the game is  Tie!\nWins: ${score.Wins}, Losses: ${score.Losses}, Ties: ${score.Ties}`
-    );
   } else if (computerMode === "paper" && playerMode === "paper") {
     score.Ties+=1;
-    alert(
-      `You choose ${playerMode} and computer choose ${computerMode}. the game is  Tie!\nWins: ${score.Wins}, Losses: ${score.Losses}, Ties: ${score.Ties}`
-    );
   } else if (computerMode === "paper" && playerMode === "rock") {
     score.Losses+=1;
-    alert(
-      `You choose ${playerMode} and computer choose ${computerMode}. the winner is  Computer!\nWins: ${score.Wins}, Losses: ${score.Losses}, Ties: ${score.Ties}`
-    );
   } else if (computerMode === "paper" && playerMode === "scissors") {
     score.Wins+=1;
-    alert(
-      `You choose ${playerMode} and computer choose ${computerMode}. the winner is  You!\nWins: ${score.Wins}, Losses: ${score.Losses}, Ties: ${score.Ties}`
-    );
   } else if (computerMode === "scissors" && playerMode === "paper") {
     score.Losses+=1;
-    alert(
-      `You choose ${playerMode} and computer choose ${computerMode}. the winner is  Computer!\nWins: ${score.Wins}, Losses: ${score.Losses}, Ties: ${score.Ties}`
-    );
   } else if (computerMode === "scissors" && playerMode === "rock") {
     score.Wins+=1;
-    alert(
-      `You choose ${playerMode} and computer choose ${computerMode}. the winner is  You!\nWins: ${score.Wins}, Losses: ${score.Losses}, Ties: ${score.Ties}`
-    );
   } else if (computerMode === "scissors" && playerMode === "scissors") {
     score.Ties+=1;
-    alert(
-      `You choose ${playerMode} and computer choose ${computerMode}. the game is  Tie!\nWins: ${score.Wins}, Losses: ${score.Losses}, Ties: ${score.Ties}`
-    );
   } else {
     alert("Invalid input");
   }
 
   localStorage.setItem("score",JSON.stringify(score));
+  win.innerHTML=`${score.Wins}`
+  losses.innerHTML=`${score.Losses}`
+  tie.innerHTML=`${score.Ties}`
 };
 
 const resetScore=()=>{
@@ -73,7 +56,9 @@ const resetScore=()=>{
   score.Losses=0;
   score.Ties=0;
   localStorage.removeItem("score");
-  alert(`Score reset: Wins: ${score.Wins}, Losses: ${score.Losses}, Ties: ${score.Ties}`)
+  win.innerHTML=`${score.Wins}`
+  losses.innerHTML=`${score.Losses}`
+  tie.innerHTML=`${score.Ties}`
 }
 
 document.getElementById("btn1").addEventListener("click", () => {

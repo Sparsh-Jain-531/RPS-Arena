@@ -1,19 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>RPS Arena</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
     <h1>RPS Arena - Get ready for some fun!</h1>
     <div class="container">
+      <div>
         <button id="btn1">Rock</button>
         <button id="btn2">Paper</button>
         <button id="btn3">Scissor</button>
+      </div>
+      <div class="container-two">
+        <p class="result"></p>
+        <p class="moves"></p>
+        <p>Wins: <span class="wins"></span>, Losses: <span class="losses"></span>, Tie: <span class="tie"></span></p>
+      </div>
+      <div>
         <button id="btn4">Reset Score</button>
+      </div>
     </div>
     <script src="script.js"></script>
-</body>
+  </body>
 </html>
