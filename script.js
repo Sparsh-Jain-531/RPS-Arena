@@ -2,15 +2,20 @@ console.log("RPS Arena");
 
 let computerMode;
 let playerMode;
-const score={
+const score=JSON.parse(localStorage.getItem("score")) || {
   Wins:0,
   Losses:0,
   Ties:0,
 };
+
 const result = () => {
+
   const modes = ["rock", "paper", "scissors"];
+
   const random = Math.floor(Math.random() * 3);
+
   computerMode = modes[random];
+
   if (computerMode === "rock" && playerMode === "scissors") {
     score.Losses+=1;
     alert(
@@ -59,12 +64,15 @@ const result = () => {
   } else {
     alert("Invalid input");
   }
+
+  localStorage.setItem("score",JSON.stringify(score));
 };
 
 const resetScore=()=>{
   score.Wins=0;
   score.Losses=0;
   score.Ties=0;
+  localStorage.removeItem("score");
   alert(`Score reset: Wins: ${score.Wins}, Losses: ${score.Losses}, Ties: ${score.Ties}`)
 }
 
