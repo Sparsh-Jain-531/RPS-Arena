@@ -60,7 +60,9 @@ const result = (playerMode) => {
   win.innerHTML=`${score.Wins}`;
   losses.innerHTML=`${score.Losses}`;
   tie.innerHTML=`${score.Ties}`;
-  moves.innerHTML=`You chooses ${playerMode} & computer chooses ${computerMode}`;
+  // moves.innerHTML=`You chooses ${playerMode} & computer chooses ${computerMode}`;
+  // moves.innerHTML=`<img class="img" src="./rock-emoji.png" alt=""></img>`;
+  moves.innerHTML=`You ${playerMode==="rock"? '<img class="img" src="./images/rock-emoji.png" alt=""></img>' : playerMode==="paper" ? '<img class="img" src="./images/paper-emoji.png" alt=""></img>' : '<img class="img" src="./images/scissors-emoji.png" alt=""></img>'} - ${computerMode==="rock"? '<img class="img" src="./images/rock-emoji.png" alt=""></img>' : computerMode==="paper" ? '<img class="img" src="./images/paper-emoji.png" alt=""></img>' : '<img class="img" src="./images/scissors-emoji.png" alt=""></img>'} Computer`;
 };
 
 const resetScore=()=>{

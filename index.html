@@ -4,25 +4,40 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>RPS Arena</title>
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="./styles/style.css" />
   </head>
   <body>
-    <h1>RPS Arena - Get ready for some fun!</h1>
-    <div class="container">
+    <div class="flex">
       <div>
-        <button id="btn1">Rock</button>
-        <button id="btn2">Paper</button>
-        <button id="btn3">Scissor</button>
+        <h1>RPS Arena - Get ready for some fun!</h1>
       </div>
-      <div class="container-two">
+      <div>
+        <button class="btn" id="btn1">
+          <img class="img" src="./images/rock-emoji.png" alt="" />
+        </button>
+        <button class="btn" id="btn2">
+          <img class="img" src="./images/paper-emoji.png" alt="" />
+        </button>
+        <button class="btn" id="btn3">
+          <img class="img" src="./images/scissors-emoji.png" alt="" />
+        </button>
+      </div>
+      <div>
         <p class="result"></p>
+      </div>
+      <div>
         <p class="moves"></p>
-        <p>Wins: <span class="wins"></span>, Losses: <span class="losses"></span>, Tie: <span class="tie"></span></p>
+      </div>
+      <div>
+        <p>
+          Wins: <span class="wins"></span>, Losses: <span class="losses"></span>,
+          Tie: <span class="tie"></span>
+        </p>
       </div>
       <div>
         <button id="btn4">Reset Score</button>
       </div>
     </div>
-    <script src="script.js"></script>
+    <script src="./script/script.js"></script>
   </body>
 </html>
