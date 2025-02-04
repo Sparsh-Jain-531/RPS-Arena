@@ -25,31 +25,13 @@ const result = (playerMode) => {
 
   computerMode = modes[random];
 
-  if (computerMode === "rock" && playerMode === "scissors") {
+  if ((computerMode === "rock" && playerMode === "scissors") || (computerMode === "scissors" && playerMode === "paper") || (computerMode === "paper" && playerMode === "rock")) {
     score.Losses+=1;
     results.innerHTML=`${"You Lose"}`;
-  } else if (computerMode === "rock" && playerMode === "paper") {
+  } else if ((computerMode === "rock" && playerMode === "paper") || (computerMode === "scissors" && playerMode === "rock") || (computerMode === "paper" && playerMode === "scissors")) {
     score.Wins+=1;
     results.innerHTML=`${"You Win"}`;
-  } else if (computerMode === "rock" && playerMode === "rock") {
-    score.Ties+=1;
-    results.innerHTML=`${"Tie"}`;
-  } else if (computerMode === "paper" && playerMode === "paper") {
-    score.Ties+=1;
-    results.innerHTML=`${"Tie"}`;
-  } else if (computerMode === "paper" && playerMode === "rock") {
-    score.Losses+=1;
-    results.innerHTML=`${"You Lose"}`;
-  } else if (computerMode === "paper" && playerMode === "scissors") {
-    score.Wins+=1;
-    results.innerHTML=`${"You Won"}`;
-  } else if (computerMode === "scissors" && playerMode === "paper") {
-    score.Losses+=1;
-    results.innerHTML=`${"You Lose"}`;
-  } else if (computerMode === "scissors" && playerMode === "rock") {
-    score.Wins+=1;
-    results.innerHTML=`${"You Won"}`;
-  } else if (computerMode === "scissors" && playerMode === "scissors") {
+  } else if ((computerMode === "rock" && playerMode === "rock") || (computerMode === "paper" && playerMode === "paper") || (computerMode === "scissors" && playerMode === "scissors")) {
     score.Ties+=1;
     results.innerHTML=`${"Tie"}`;
   } else {
